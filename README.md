@@ -24,6 +24,6 @@ Help the Beer Man to collect what he likes the most!
 ### Controls
 
 
-[Play it](https://fernandodantasfilho.github.io/vampixel_platform/)
+[Play it](https://marmotalabstudio.github.io/beerman/)
 
 MIT Licensed
