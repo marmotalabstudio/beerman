@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14262a00c3d5c42d7a21aa0f1bcb4846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedJump: 300
 --- !u!4 &1502618382 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: b7e10e6faa72e074888c402c5a76cf81, type: 3}
