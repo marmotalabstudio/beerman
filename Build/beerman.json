@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "beerman.data.unityweb",
+"asmCodeUrl": "beerman.asm.code.unityweb",
+"asmMemoryUrl": "beerman.asm.memory.unityweb",
+"asmFrameworkUrl": "beerman.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
