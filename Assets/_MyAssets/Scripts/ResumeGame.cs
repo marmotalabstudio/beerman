@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ResumeGame : MonoBehaviour {
 
+	private Manager manager;
+
 	public void ResumeTheGame () {
+		manager = GameObject.FindObjectOfType<Manager> ();	
 		PlayerController playerController = FindObjectOfType<PlayerController>();
 		playerController.transform.position = playerController.initialPosition;
-		Manager.gameOver = false;
+		manager.gameOver = false;
 		Time.timeScale = 1;
 	}
 }

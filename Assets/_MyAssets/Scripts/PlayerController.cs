@@ -6,9 +6,11 @@ public class PlayerController : MonoBehaviour {
 	
 	private Rigidbody rb;
 	public  Vector3 initialPosition;
+	private Manager manager;
 
 	// Use this for initialization
 	void Start () {
+		manager = GameObject.FindObjectOfType<Manager> ();	
 		rb = GetComponent<Rigidbody> ();
 		initialPosition = gameObject.transform.position;
 	}
@@ -16,13 +18,14 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (gameObject.transform.position.y < -2.5) {
-			Manager.gameOver = true;
+			manager.gameOver = true;
 		}
 	}
 
-	void OnCollisionEnter(Collision collider) {
+	void OnTriggerEnter(Collider collider) {
 		if(collider.gameObject.tag == "Beer") {
-			Manager.addScore();
+			manager.addScore();
+			collider.gameObject.transform.position = new Vector3(0, 3, 49);
 		}
 	}
 

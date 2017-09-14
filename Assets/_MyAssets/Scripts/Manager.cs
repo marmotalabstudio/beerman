@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class Manager : MonoBehaviour {
 
-	public static bool gameOver = false;
-	private static int score = 0;
+	public bool gameOver = false;
+	private int score = 0;
 	public Button playAgainButton;
+	public Text scoreText;
+
 
 	// Use this for initialization
 	void Start () {
@@ -23,10 +25,9 @@ public class Manager : MonoBehaviour {
 		playAgainButton.gameObject.SetActive(gameOver);
 	}
 
-	public static void addScore() {
-		Debug.Log("adddddd");
-		// recupera scoreText
-		//scoreText.text = "Score: " + (++score);
+	public void addScore() {
+		// update score HUD
+		scoreText.text = "Score: " + (++score);
 	}
 	
 }
