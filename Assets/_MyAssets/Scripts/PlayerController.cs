@@ -20,4 +20,10 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter(Collision collider) {
+		if(collider.gameObject.tag == "Beer") {
+			Manager.addScore();
+		}
+	}
+
 }
