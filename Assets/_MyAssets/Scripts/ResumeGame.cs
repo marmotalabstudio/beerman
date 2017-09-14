@@ -10,6 +10,7 @@ public class ResumeGame : MonoBehaviour {
 		manager = GameObject.FindObjectOfType<Manager> ();	
 		PlayerController playerController = FindObjectOfType<PlayerController>();
 		playerController.transform.position = playerController.initialPosition;
+		manager.resetScore();
 		manager.gameOver = false;
 		Time.timeScale = 1;
 	}

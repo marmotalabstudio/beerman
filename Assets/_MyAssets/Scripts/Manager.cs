@@ -29,5 +29,10 @@ public class Manager : MonoBehaviour {
 		// update score HUD
 		scoreText.text = "Score: " + (++score);
 	}
+
+	public void resetScore() {
+		score = 0;
+		scoreText.text = "Score: " + score;
+	}
 	
 }
