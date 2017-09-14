@@ -34,6 +34,11 @@ public class MovementController : MonoBehaviour {
 			chargeLevel -= Time.deltaTime * chargeSpeed;
 		}
 		animator.SetFloat("movement", chargeLevel);
+
+		if (rb.velocity.y < -10) {
+			Debug.Log ("morre");
+			Application.LoadLevel(Application.loadedLevel);
+		}
     }
 }
 
