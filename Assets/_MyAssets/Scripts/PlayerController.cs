@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 	
 	private Rigidbody rb;
-	public static Transform initialPosition;
+	public  Vector3 initialPosition;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
-		initialPosition = gameObject.transform;
+		initialPosition = gameObject.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -20,7 +20,5 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
  
-	public static void resetPosition() {
-		gameObject.transform = initialPosition;
-	}
+
 }
