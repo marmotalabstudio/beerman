@@ -15,10 +15,9 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (rb.velocity.y < -10 && !Manager.gameOver) {
+		if (gameObject.transform.position.y < -2.5) {
 			Manager.gameOver = true;
 		}
 	}
- 
 
 }
