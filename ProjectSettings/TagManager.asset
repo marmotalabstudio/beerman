@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Beer
+  - Obstacle
+  - finish
   layers:
   - Default
   - TransparentFX

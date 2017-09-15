@@ -18,10 +18,17 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (gameObject.transform.position.y < -0.6) {
+		if (gameObject.transform.position.y < -0.2) {
 			manager.gameOver = true;
-			Debug.Log ("GameOver");
+		}
+	}
 
+	void OnCollisionEnter(Collision coll) {
+		if(coll.gameObject.tag == "Obstacle") {
+			manager.gameOver = true;
+		}
+		if(coll.gameObject.tag == "finish") {
+			Debug.Log("Você ganhou");
 		}
 	}
 
