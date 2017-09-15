@@ -36,6 +36,16 @@ public class MovementController : MonoBehaviour {
 			chargeLevel -= Time.deltaTime * chargeSpeed;
 		}
 		animator.SetFloat("movement", chargeLevel);
+
+		if (Input.GetKey (KeyCode.A)) {
+			animator.SetFloat ("walkWide", -1);
+		}
+
+		if (Input.GetKey (KeyCode.D)) {
+			animator.SetFloat("walkWide", 1);
+		}
+			
     }
+
 }
 
