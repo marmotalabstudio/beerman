@@ -15,11 +15,13 @@ public class PlayerController : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		initialPosition = gameObject.transform.position;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		if (gameObject.transform.position.y < -2.5) {
+		if (gameObject.transform.position.y < -0.6) {
 			manager.gameOver = true;
+			Debug.Log ("GameOver");
+
 		}
 	}
 
