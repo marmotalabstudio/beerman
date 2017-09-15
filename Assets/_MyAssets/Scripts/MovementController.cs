@@ -11,6 +11,7 @@ public class MovementController : MonoBehaviour {
 	private float chargeLevel;
 	private float chargeMaxLimit = 1f;
 	private float chargeMinLimit = 0f;
+	public AudioSource jump;
 
     // Use this for initialization
     void Start () {
@@ -25,6 +26,7 @@ public class MovementController : MonoBehaviour {
         if (Input.GetKeyDown ("space") && rb.velocity.y == 0) {
             animator.SetTrigger ("Jump");
             rb.AddForce (movement);
+			jump.Play ();
         }
 
 		if (Input.GetKey(KeyCode.W)  && chargeLevel < chargeMaxLimit) {
