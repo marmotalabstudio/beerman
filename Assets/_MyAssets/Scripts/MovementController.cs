@@ -10,7 +10,7 @@ public class MovementController : MonoBehaviour {
     private Animator animator;
 	private float chargeLevel;
 	private float chargeMaxLimit = 1f;
-	private float chargeMinLimit = 0f;
+	private bool isRunning = false;
 	public AudioSource jump;
 
     // Use this for initialization
@@ -29,12 +29,14 @@ public class MovementController : MonoBehaviour {
 			jump.Play ();
         }
 
-		if (Input.GetKey(KeyCode.W)  && chargeLevel < chargeMaxLimit) {
+		if(Input.GetKey(KeyCode.W)) {
+			isRunning = true;
+		}
+
+		if (isRunning  && chargeLevel < chargeMaxLimit) {
 			chargeLevel += Time.deltaTime * chargeSpeed;
 		}
-		else if(chargeLevel > chargeMinLimit){
-			chargeLevel -= Time.deltaTime * chargeSpeed;
-		}
+
 		animator.SetFloat("movement", chargeLevel);
 
 		if (Input.GetKey (KeyCode.A)) {
