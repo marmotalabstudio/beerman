@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 			manager.gameOver = true;
 		}
 		if(coll.gameObject.tag == "finish") {
-			Debug.Log("Você ganhou");
+			manager.win = true;
 		}
 	}
 

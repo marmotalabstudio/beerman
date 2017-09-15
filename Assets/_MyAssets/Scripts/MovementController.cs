@@ -23,7 +23,7 @@ public class MovementController : MonoBehaviour {
     void Update () {
         Vector3 movement = new Vector3 (0.0f, speedJump, 0.0f);
 
-        if (Input.GetKeyDown ("space") && rb.velocity.y == 0) {
+        if (Input.GetKeyDown ("space") && gameObject.transform.position.y <= 0.009f) {
             animator.SetTrigger ("Jump");
             rb.AddForce (movement);
 			jump.Play ();

@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class Manager : MonoBehaviour {
 
 	public bool gameOver = false;
+	public bool win = false;
 	private int score = 0;
 	public Button playAgainButton;
 	public Text scoreText;
+	public Text winText;
 
 
 	// Use this for initialization
@@ -17,12 +19,13 @@ public class Manager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(gameOver) {
+		if(gameOver || win) {
 			Time.timeScale = 0;
 		}
 
 		// update button visibility
 		playAgainButton.gameObject.SetActive(gameOver);
+		winText.gameObject.SetActive(win);
 	}
 
 	public void addScore() {
