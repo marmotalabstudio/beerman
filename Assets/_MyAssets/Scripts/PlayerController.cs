@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody rb;
 	public  Vector3 initialPosition;
 	private Manager manager;
+	public AudioSource beer;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour {
 		if(collider.gameObject.tag == "Beer") {
 			manager.addScore();
 			collider.gameObject.transform.position = new Vector3(0, 3, 49);
+			beer.Play ();
 		}
 	}
 
