@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter(Collider collider) {
 		if(collider.gameObject.tag == "Beer") {
 			manager.addScore();
-			collider.gameObject.transform.position = new Vector3(0, 3, 49);
+			collider.gameObject.transform.position = new Vector3(0, 3, -16);
 			beer.Play ();
 		}
 	}
