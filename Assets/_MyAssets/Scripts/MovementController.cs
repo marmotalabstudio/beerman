@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class MovementController : MonoBehaviour {
+public class MovementController : NetworkBehaviour {
 
     public float speedJump;
 	public float chargeSpeed;
@@ -23,27 +24,27 @@ public class MovementController : MonoBehaviour {
     void Update () {
         Vector3 movement = new Vector3 (0.0f, speedJump, 0.0f);
 
-        if (Input.GetKeyDown ("space") && gameObject.transform.position.y <= 0.009f) {
+		if (Input.GetKeyDown ("space") && gameObject.transform.position.y <= 0.009f && isLocalPlayer) {
             animator.SetTrigger ("Jump");
             rb.AddForce (movement);
 			jump.Play ();
         }
 
-		if(Input.GetKey(KeyCode.W)) {
+		if(Input.GetKey(KeyCode.W) && isLocalPlayer) {
 			isRunning = true;
 		}
 
-		if (isRunning  && chargeLevel < chargeMaxLimit) {
+		if (isRunning  && chargeLevel < chargeMaxLimit && isLocalPlayer) {
 			chargeLevel += Time.deltaTime * chargeSpeed;
 		}
 
 		animator.SetFloat("movement", chargeLevel);
 
-		if (Input.GetKey (KeyCode.A)) {
+		if (Input.GetKey (KeyCode.A) && isLocalPlayer) {
 			animator.SetFloat ("walkWide", -1);
 		}
 
-		if (Input.GetKey (KeyCode.D)) {
+		if (Input.GetKey (KeyCode.D) && isLocalPlayer) {
 			animator.SetFloat("walkWide", 1);
 		}
 			
